@@ -78,7 +78,10 @@ hybrid.pc.global.cluster = function(
 
 hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
                      test.args, pc.method, backtracking = NULL, debug = FALSE) {
-
+  #check temporaly special node
+  if {t=="VNLG"} {
+    debug=TRUE
+    }
   # 1. [PCS] Search parents and children superset
   tmp = hybrid.pc.de.pcs(t, data, nodes, alpha, test.args, whitelist, blacklist,
                          backtracking, test, debug)
@@ -181,7 +184,7 @@ hybrid.pc.nbr.search = function(t, data, nodes, test, alpha, test.args,
 
     mb = iambfdr(x = t, data = data, nodes = nodes,
                  alpha = alpha, test.args = test.args, whitelist = whitelist, blacklist = blacklist,
-                 start = start, backtracking = backtracking, test = test, debug = debug)
+                 start = start, backtracking = backtracking, test = test, debug = FALSE)
 
   }#THEN
   else {
