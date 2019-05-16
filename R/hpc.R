@@ -79,7 +79,7 @@ hybrid.pc.global.cluster = function(
 hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
                      test.args, pc.method, backtracking = NULL, debug = FALSE) {
   #check temporaly special node
-  if {t=="VNLG"} {
+  if (t=="VNLG") {
     debug=TRUE
     }
   # 1. [PCS] Search parents and children superset
