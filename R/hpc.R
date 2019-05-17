@@ -80,8 +80,8 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
                      test.args, pc.method, backtracking = NULL, debug = FALSE) {
   #check temporaly special node
   print("hello, je suis là")
-  cat ("node is",t)
-  if (t=="VNLG") {
+  cat ("node is",type(t))
+  if (t=="VTUB") {
     debug=TRUE
     }
   # 1. [PCS] Search parents and children superset
