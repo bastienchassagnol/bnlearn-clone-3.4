@@ -80,7 +80,7 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
                      test.args, pc.method, backtracking = NULL, debug = FALSE) {
   #check temporaly special node
   print("hello, je suis là")
-  cat ("node is",type(t))
+  cat ("node is",typeof(t))
   if (t=="VTUB") {
     debug=TRUE
     }
