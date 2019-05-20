@@ -325,7 +325,8 @@ hybrid.pc.de.pcs = function(t, data, nodes, alpha, test.args, whitelist, blackli
   ret = list(pcs=pcs, dsep=dsep, pvals = pvals)
   if (debug) {
     cat(" * PCS of", t, "= '", pcs, "'.\n")
-    cat (do.call(cat, ret),"useful data for parent superset is ")
+    print("couvertue globale et dictionnaire de separation sont ")
+    print(ret)
   }#THEN
 
  
