@@ -291,7 +291,7 @@ hybrid.pc.de.pcs = function(t, data, nodes, alpha, test.args, whitelist, blackli
     # heuristic 3 : sort the d-separating canditates in increasing p-value order
     # this way we are more prone to remove with highly correlated nodes first
     nodes.to.check.against = setdiff(pcs[order(pvals)], x)
-    cat("les noeuds permettant la d-separation sont ",nodes.to.check.against,"\n\n")
+    
 
     for (y in nodes.to.check.against) {
 
