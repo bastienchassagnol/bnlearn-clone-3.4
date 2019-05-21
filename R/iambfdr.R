@@ -105,6 +105,13 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
   known.good = known.bad = character(0)
   mb = start
 
+  
+
+  # whitelisted nodes are included by default (if there's a direct arc
+  # between them of course they are in each other's markov blanket).
+  # arc direction is irrelevant here.
+  mb = union(mb, whitelisted)
+  
   if (debug) {
 
     cat("----------------------------------------------------------------\n")
@@ -114,11 +121,6 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
       cat("* initial set includes '", mb, "'.\n")
 
   }#THEN
-
-  # whitelisted nodes are included by default (if there's a direct arc
-  # between them of course they are in each other's markov blanket).
-  # arc direction is irrelevant here.
-  mb = union(mb, whitelisted)
 
   # blacklist is not checked, not all nodes in a markov blanket must be
   # neighbours.
@@ -165,11 +167,12 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     # get an association measure for each of the available nodes.
     association = sapply(nodes, function(node) {
       conditional.test(x, node, sx = setdiff(mb, node), test = test,
-                       data = data, test.args = test.args, alpha = alpha)})
+                       data = data, test.args = test.args, alpha = alpha)},debug=TRUE)
 
     pvalues.order = order(association)
     association = association[pvalues.order]
     nodes = nodes[pvalues.order]
+    cat("liste des noeuds à inclure est ",nodes)
 
     # 1 - Check nodes for exclusion
     for (i in (q-1):1) {
