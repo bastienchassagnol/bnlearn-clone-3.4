@@ -139,7 +139,7 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
 
       cat("    * known good (backtracking): '", known.good, "'.\n")
       cat("    * known bad (backtracking): '", known.bad, "'.\n")
-      cat("    * nodes still to be tested for inclusion: '", nodes, "'.\n")
+      cat("    * nodes still to be tested for inclusion: '", nodes, "'.\n\n\n")
 
     }#THEN
 
@@ -172,8 +172,8 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     pvalues.order = order(association)
     association = association[pvalues.order]
     nodes = nodes[pvalues.order]
-    cat("liste des noeuds à inclure dans l'ordre est ",nodes)
-    cat ("current markov blanket is ",mb)
+    cat("liste des noeuds à inclure dans l'ordre est ",nodes,"\n")
+    cat ("current markov blanket is ",mb,"\n")
 
     # 1 - Check nodes for exclusion
     for (i in (q-1):1) {
