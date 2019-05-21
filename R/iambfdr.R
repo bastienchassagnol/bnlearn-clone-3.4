@@ -247,7 +247,7 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     break
 
   }#REPEAT
-  if debug {
+  if (debug) {
   cat ("Final mb found for node ",x," is ",mb,"\n\n")
     }
   
