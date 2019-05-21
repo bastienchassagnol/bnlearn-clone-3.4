@@ -81,9 +81,7 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
   #check temporaly special node
   
   cat("noeud etudie est ",t,"\n")
-  if (t=="VENTTUBE") {
-    debug=TRUE
-    }
+  
   # 1. [PCS] Search parents and children superset
   tmp = hybrid.pc.de.pcs(t, data, nodes, alpha, test.args, whitelist, blacklist,
                          backtracking, test, debug)
@@ -183,10 +181,17 @@ hybrid.pc.nbr.search = function(t, data, nodes, test, alpha, test.args,
 
   }#THEN
   else if (method == "fdr.iamb") {
-
+    if (t=="VENTTUBE") {
     mb = iambfdr(x = t, data = data, nodes = nodes,
                  alpha = alpha, test.args = test.args, whitelist = whitelist, blacklist = blacklist,
+                 start = start, backtracking = backtracking, test = test, debug = TRUE)
+    }
+    else {
+      mb = iambfdr(x = t, data = data, nodes = nodes,
+                 alpha = alpha, test.args = test.args, whitelist = whitelist, blacklist = blacklist,
                  start = start, backtracking = backtracking, test = test, debug = FALSE)
+      }
+    
 
   }#THEN
   else {
