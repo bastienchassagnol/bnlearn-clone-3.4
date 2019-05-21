@@ -134,6 +134,9 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
 
   if (debug)
     cat(" * PC of", t, "=", pc, "\n")
+  if (t=="VENTTUBE") {
+    cat(" * PC of", t, "=", pc, "\n")
+    }
 
   res = list(nbr = pc, mb = c(pcs, rsps))
 
