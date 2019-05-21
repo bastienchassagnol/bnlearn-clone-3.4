@@ -167,12 +167,13 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     # get an association measure for each of the available nodes.
     association = sapply(nodes, function(node) {
       conditional.test(x, node, sx = setdiff(mb, node), test = test,
-                       data = data, test.args = test.args, alpha = alpha)},debug=TRUE)
+                       data = data, test.args = test.args, alpha = alpha)},debug=debug)
 
     pvalues.order = order(association)
     association = association[pvalues.order]
     nodes = nodes[pvalues.order]
-    cat("liste des noeuds à inclure est ",nodes)
+    cat("liste des noeuds à inclure dans l'ordre est ",nodes)
+    cat ("current markov blanket is ",mb)
 
     # 1 - Check nodes for exclusion
     for (i in (q-1):1) {
