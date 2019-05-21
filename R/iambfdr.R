@@ -167,7 +167,7 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     # get an association measure for each of the available nodes.
     association = sapply(nodes, function(node) {
       conditional.test(x, node, sx = setdiff(mb, node), test = test,
-                       data = data, test.args = test.args, alpha = alpha,debug=debug)})
+                       data = data, test.args = test.args, alpha = alpha)})
 
     pvalues.order = order(association)
     association = association[pvalues.order]
@@ -247,7 +247,7 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     break
 
   }#REPEAT
-
+  cat ("final mb found for node ",t," is ",mb)
   return(mb)
 
 }#IAMBFDR
