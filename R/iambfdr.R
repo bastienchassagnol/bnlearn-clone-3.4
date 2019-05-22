@@ -176,8 +176,10 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     pvalues.order = order(association)
     association = association[pvalues.order]
     nodes = nodes[pvalues.order]
+    if (debug) {
     cat("liste des noeuds à inclure dans l'ordre est ",nodes,"\n")
     cat ("current markov blanket is ",mb,"\n")
+      }
 
     # 1 - Check nodes for exclusion
     for (i in (q-1):1) {
