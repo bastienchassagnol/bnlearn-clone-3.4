@@ -163,17 +163,12 @@ hybrid.pc.nbr.search = function(t, data, nodes, test, alpha, test.args,
 
   }#THEN
   else if (method == "fdr.iamb") {
-    if (t=="VENTTUBE") {
+ 
     mb = iambfdr(x = t, data = data, nodes = nodes,
                  alpha = alpha, test.args = test.args, whitelist = whitelist, blacklist = blacklist,
-                 start = start, backtracking = backtracking, test = test, debug = TRUE)
-    }
-    else {
-      mb = iambfdr(x = t, data = data, nodes = nodes,
-                 alpha = alpha, test.args = test.args, whitelist = whitelist, blacklist = blacklist,
                  start = start, backtracking = backtracking, test = test, debug = FALSE)
-      }
-    
+  
+   
 
   }#THEN
   else {
