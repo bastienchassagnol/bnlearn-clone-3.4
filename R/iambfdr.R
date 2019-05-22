@@ -104,6 +104,10 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
     nodes, function(y) { is.whitelisted(whitelist, c(x, y), either = TRUE) })]
   known.good = known.bad = character(0)
   mb = start
+  
+  if (x=="VENTTUBE") {
+    debug=TRUE    
+    }
 
   
 
