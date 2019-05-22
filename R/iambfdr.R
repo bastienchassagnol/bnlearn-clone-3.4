@@ -158,6 +158,9 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
   just.removed.node = NULL
 
   fdr.factor = (q-1) * sum(1/(1:(q-1)))
+  if (debug) {
+    cat ("fdr facteur est ",fdr.factor)
+    }
 
   culprit = character(0)
   loop.counter = 1
