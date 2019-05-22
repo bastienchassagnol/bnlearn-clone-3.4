@@ -108,34 +108,13 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
                             test = test, alpha = alpha, test.args = test.args, whitelist = whitelist,
                             blacklist = blacklist, start = start, backtracking = backtracking,
                             debug = debug, method = pc.method)
-
-  # 4. [Neighbourhood OR] Detect and add false-negatives to PC, by checking if
-  #     the target is present in potential neighbours' neighbours
-  for (node in pcs[!pcs %in% pc]) {
-
-    pcn = hybrid.pc.nbr.search(t = node, data = data, nodes = c(t, pcs, rsps),
-                               test = test, alpha = alpha, test.args = test.args, whitelist = whitelist,
-                               blacklist = blacklist, backtracking = NULL,
-                               debug = debug, method = pc.method, looking.for = t)
-
-    # Logical OR : add the nodes from my PCS which I don't see
-    # in my PC but which see me in theirs
-    if(t %in% pcn) {
-
-      pc = c(pc, node)
-      mb = c(mb, node)
-
-      if (debug)
-        cat("  @", node, "added to the parents and children. (HPC's OR)\n")
-
-    }#THEN
-
-  }#FOR
-
+ 
   if (debug)
     cat(" * PC of", t, "=", pc, "\n")
   if (t=="VENTTUBE") {
     cat(" * PC of", t, "=", pc, "\n")
+    print(mb)
+    cat ("\n\n")
     }
 
   res = list(nbr = pc, mb = c(pcs, rsps))
