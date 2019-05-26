@@ -434,6 +434,7 @@ shmi.test = function(x, y, gsquare = TRUE) {
 
 # Monte Carlo (discrete data)
 mc.test = function(x, y, samples, alpha, test) {
+  print("on est dans cette fonction")
 
   .Call("mcarlo",
         x = x,
@@ -472,6 +473,7 @@ shcmi.test = function(x, y, z, gsquare = TRUE) {
 
 # Conditional Monte Carlo (discrete data)
 cmc.test = function(x, y, z, samples, alpha, test) {
+  print("on est dans cette fonction")
 
   .Call("cmcarlo",
         x = x,
