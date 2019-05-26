@@ -52,7 +52,7 @@ int num = LENGTH(x), nr = NLEVELS(x), nc = NLEVELS(y);
 int *xx = INTEGER(x), *yy = INTEGER(y), *B = INTEGER(samples);
 int i = 0, k = 0, npermuts = 0, enough = ceil(NUM(alpha) * (*B)) + 1;
 SEXP result;
-  printf("taille de x est = %i", num);
+  
   /* allocate and initialize the result. */
   PROTECT(result = allocVector(REALSXP, 3));
   res = REAL(result);
@@ -208,7 +208,7 @@ int nr = NLEVELS(x), nc = NLEVELS(y), nl = NLEVELS(z);
 int *xx = INTEGER(x), *yy = INTEGER(y), *zz = INTEGER(z);
 int i = 0, j = 0, k = 0, npermuts = 0, enough = ceil(NUM(alpha) * (*B)) + 1;
 SEXP result;
-
+	printf("taille de x est = %i", num);
   /* allocate and initialize the result */
   PROTECT(result = allocVector(REALSXP, 3));
   res = REAL(result);
