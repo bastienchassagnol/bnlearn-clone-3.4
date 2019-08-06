@@ -81,7 +81,7 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
   #check temporaly special node
   
   cat("noeud etudie est ",t,"\n")
-  if (t=="HISTORY") {
+  if (t=="LVFAILURE") {
     debug=TRUE
     }
   
@@ -306,9 +306,7 @@ hybrid.pc.de.pcs = function(t, data, nodes, alpha, test.args, whitelist, blackli
 
   ret = list(pcs=pcs, dsep=dsep, pvals = pvals)
   if (debug) {
-    cat(" * PCS of", t, "= '", pcs, "'.\n")
-    print("couvertue globale et dictionnaire de separation sont ")
-    print(ret)
+    cat(" * PCS of", t, "= '", pcs, "'.\n")  
   }#THEN
 
  
