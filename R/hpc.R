@@ -123,7 +123,7 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
 }#HYBRID.PC
 
 hybrid.pc.nbr.search = function(t, data, nodes, test, alpha, test.args,
-                                whitelist = NULL, blacklist = NULL, backtracking = NULL, debug = FALSE,
+                                whitelist = NULL, blacklist = NULL, backtracking = NULL, debug = debug,
                                 start = character(0), method, looking.for = NULL) {
 
   if (method == "si.hiton.pc") {
@@ -165,7 +165,7 @@ hybrid.pc.nbr.search = function(t, data, nodes, test, alpha, test.args,
  
     mb = iambfdr(x = t, data = data, nodes = nodes,
                  alpha = alpha, test.args = test.args, whitelist = whitelist, blacklist = blacklist,
-                 start = start, backtracking = backtracking, test = test, debug = FALSE)
+                 start = start, backtracking = backtracking, test = test, debug = debug)
   
    
 
