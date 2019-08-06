@@ -81,6 +81,9 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
   #check temporaly special node
   
   cat("noeud etudie est ",t,"\n")
+  if (t=="HISTORY") {
+    debug=TRUE
+    }
   
   # 1. [PCS] Search parents and children superset
   tmp = hybrid.pc.de.pcs(t, data, nodes, alpha, test.args, whitelist, blacklist,
@@ -112,7 +115,7 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
   if (debug)
     cat(" * PC of", t, "=", pc, "\n")
   cat(" * PC of", t, "=", pc, " and RSPS of ",t, " is ",rsps,".\n")
-
+  debug=FALSE
   res = list(nbr = pc, mb = c(pcs, rsps))
 
   return(res)
