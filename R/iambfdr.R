@@ -191,6 +191,7 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
         if (pvalue * fdr.factor / i > alpha) {
 
           if (debug)
+            cat ("la valeur de controle est ", pvalue * fdr.factor / i, "pour une pvalue de ", pvalue)
             cat("  @", node, "removed from the markov blanket\n")
 
           mb = setdiff(mb, node)
@@ -215,6 +216,7 @@ iambfdr = function(x, data, nodes, alpha, test.args, whitelist, blacklist,
           if (pvalue * fdr.factor / i <= alpha) {
 
             if (debug)
+              cat ("la valeur de controle est ", pvalue * fdr.factor / i, "pour une pvalue de ", pvalue)
               cat("  @", node, "added to the markov blanket\n")
 
             mb = c(mb, node)
