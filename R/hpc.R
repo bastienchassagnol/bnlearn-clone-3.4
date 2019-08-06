@@ -81,7 +81,7 @@ hybrid.pc = function(t, data, nodes, whitelist, blacklist, test, alpha,
   #check temporaly special node
   
   cat("noeud etudie est ",t,"\n")
-  if (t=="LVFAILURE") {
+  if (t=="HISTORY") {
     debug=TRUE
     }
   
